@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "itservices",
+  "info": {
+    "singularName": "itservice",
+    "pluralName": "itservices",
+    "displayName": "Itservice"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "engineering_services",
+  "info": {
+    "singularName": "engineering-service",
+    "pluralName": "engineering-services",
+    "displayName": "engineeringService"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

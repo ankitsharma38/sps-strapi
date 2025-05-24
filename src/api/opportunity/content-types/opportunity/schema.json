@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "opportunities",
+  "info": {
+    "singularName": "opportunity",
+    "pluralName": "opportunities",
+    "displayName": "Opportunity"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "salary": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "requirement": {
+      "type": "text"
+    },
+    "whatweoffer": {
+      "type": "text"
+    }
+  }
+}

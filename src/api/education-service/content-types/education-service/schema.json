@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "education_services",
+  "info": {
+    "singularName": "education-service",
+    "pluralName": "education-services",
+    "displayName": "EducationService"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
