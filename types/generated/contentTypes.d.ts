@@ -512,6 +512,7 @@ export interface ApiEducationServiceEducationService
   extends Struct.CollectionTypeSchema {
   collectionName: 'education_services';
   info: {
+    description: '';
     displayName: 'EducationService';
     pluralName: 'education-services';
     singularName: 'education-service';
@@ -524,10 +525,7 @@ export interface ApiEducationServiceEducationService
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Description: Schema.Attribute.Text;
-    Image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -601,6 +599,35 @@ export interface ApiHeroHero extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     tittle: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHowweworkHowwework extends Struct.CollectionTypeSchema {
+  collectionName: 'howweworks';
+  info: {
+    displayName: 'Howwework';
+    pluralName: 'howweworks';
+    singularName: 'howwework';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::howwework.howwework'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -756,6 +783,34 @@ export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     Shortdescription: Schema.Attribute.String;
     Tittle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiStatStat extends Struct.CollectionTypeSchema {
+  collectionName: 'stats';
+  info: {
+    displayName: 'Stat';
+    pluralName: 'stats';
+    singularName: 'stat';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    clients: Schema.Attribute.BigInteger;
+    completed: Schema.Attribute.BigInteger;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    loc: Schema.Attribute.BigInteger;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::stat.stat'> &
+      Schema.Attribute.Private;
+    ongoing: Schema.Attribute.BigInteger;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1339,11 +1394,13 @@ declare module '@strapi/strapi' {
       'api::education-service.education-service': ApiEducationServiceEducationService;
       'api::engineering-service.engineering-service': ApiEngineeringServiceEngineeringService;
       'api::hero.hero': ApiHeroHero;
+      'api::howwework.howwework': ApiHowweworkHowwework;
       'api::itservice.itservice': ApiItserviceItservice;
       'api::job.job': ApiJobJob;
       'api::newses.newses': ApiNewsesNewses;
       'api::opportunity.opportunity': ApiOpportunityOpportunity;
       'api::portfolio.portfolio': ApiPortfolioPortfolio;
+      'api::stat.stat': ApiStatStat;
       'api::team.team': ApiTeamTeam;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'plugin::content-releases.release': PluginContentReleasesRelease;

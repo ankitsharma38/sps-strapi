@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stats",
+  "info": {
+    "singularName": "stat",
+    "pluralName": "stats",
+    "displayName": "Stat"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "clients": {
+      "type": "biginteger",
+      "required": false
+    },
+    "completed": {
+      "type": "biginteger"
+    },
+    "ongoing": {
+      "type": "biginteger"
+    },
+    "loc": {
+      "type": "biginteger"
+    }
+  }
+}
